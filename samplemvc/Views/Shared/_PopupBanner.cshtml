@@ -1,0 +1,25 @@
+﻿@model samplemvc.Models.NewUsersPopup    
+           @{
+               Layout = null;
+           }    
+
+<div id="newuserspopup">
+    <div class="mobile__pop_main_desktop">
+        <div class="mobile_pop_up_main">
+            <span class="close_subscription_mobile"><img src="/images/closepopup.png" class="img-responsive" alt="Close Subscription" /></span>
+            <div id="progress" style="text-align:center">
+                <img src="~/images/ajax-loader.gif" alt="Loading" width="16" height="16" />
+            </div>
+            <div id="divPopUpAweber">
+                @Html.Partial("_PopUpForm")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+      

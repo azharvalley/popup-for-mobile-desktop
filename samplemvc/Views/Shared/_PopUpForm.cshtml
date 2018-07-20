@@ -1,0 +1,66 @@
+﻿@model samplemvc.Models.NewUsersPopup
+
+<div class="mobile_pop_inner">
+
+    @if (ViewBag.Heading == null)
+    {
+        <h2>SIGN UP FOR EMAILS AND RECEIVE WEEKLY UPDATES</h2>
+        <h3>Join Our Mailing List!</h3>
+
+    }
+    else
+    {
+        <h2>&nbsp;</h2>
+        <h3>Bingo!</h3>
+    }
+    @if (ViewBag.Heading == null)
+    {
+        <p>
+            Stay up to date with the latest news and promotions.            
+        </p>
+    }
+    <div class="subsc_form_mob_pop">
+
+        @using (Ajax.BeginForm("PopupAweberForm", "Home", null, new AjaxOptions
+{
+    UpdateTargetId = "divPopUpAweber",
+    InsertionMode = System.Web.Mvc.Ajax.InsertionMode.Replace,
+    HttpMethod = "POST",
+    LoadingElementId = "progress" //To display progress image
+}))
+        {
+
+
+            @Html.ValidationSummary(true)
+
+
+            <div class="form-group">
+
+                @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email*", @class = "form-control popup-form" })
+                @Html.ValidationMessageFor(m => m.Email)
+
+            </div>
+            <div class="row">   
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4 col-sm-12 lpad5">
+                    <div class="form-group">
+                        <input id="btnsubmit" type="submit" value="SUBMIT" class="btn btn-subs-submit">
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+    
+    <div class="clearfix"></div>
+</div>
+
+
+
+
+
+
+
+
+
+

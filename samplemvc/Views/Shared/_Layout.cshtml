@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!--CSS for Pop up widow of desktop and Pop up bar for Mobile Device-->
+    <link href="~/Content/popup.css" rel="stylesheet" />
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <!--Here is the Partial View of Pop up window-->
+    @Html.Partial("_PopupBanner")
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+    <!--Below JS is used for AJAX form posting and client site validation-->
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+
+    <!--Script for Pop up widow of desktop and Pop up bar for Mobile Device-->
+    <script src="~/Scripts/mobilepopupbar.js"></script>
+   
+
+    <!--Pop up windon form validation-->
+    <script>
+        $(document).ready(
+            function () {
+                $('#progress').hide();
+            }
+        );
+    </script>
+
+    <script>
+        $("#form0").validate({
+            rules: {
+                Email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                Email: {
+                    required: "Please enter your email"
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

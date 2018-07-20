@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.Net, MVC, JavaScript, CSS</h1>
+    <h2>Basic MVC Website with Pop up for desktop and mobile device. This Pop up can be used for subscribing the users or for any ads on the website.</h2>
+    <p class="lead">To Open a Pop Up window for desktop and Pop Up Bar for mobile device on page load. It will only open for the first time. To open it again you will have to clear your browser cookies.</p>
+    <p>I am creating a cookies in the Browser by name "popped=yes" and I have set the cookies expiry date for one day. You can change the expiry date as per your need.</p>
+
+    <h3>You can also open the pop up by pressing the below button.</h3>
+    <p><a onclick='openpopup()' class="btn btn-primary btn-lg">Open Pop up Window </a></p>
+
+    <p>Use this dummy email "robert@test.com" to see message if email is already subscribed.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Desktop Pop up Window</h2>
+        <p>Please check the screenshot of Pop up window on desktop.</p>
+        <p><a class="btn btn-default" href="/Home/PopupDesktop">Click here &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Mobile Pop up bar</h2>
+        <p>Please check the screenshot of Pop up bar on mobile device.</p>
+        <p><a class="btn btn-default" href="/Home/PopupMobile">Click here &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>View cookies</h2>
+        <p>Please check screenshot of the chrome developers tool. You can view the cookies.</p>
+        <p><a class="btn btn-default" href="/Home/CheckCookies">Click here &raquo;</a></p>
+    </div>
+
+
+
+</div>
