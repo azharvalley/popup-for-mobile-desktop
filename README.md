@@ -1,8 +1,5 @@
-# popup-for-mobile-desktop
-Single Pop up window used for Desktop and Mobile Device.
+Pop up window used for Desktop and Mobile Device.
 ==============================================================
-
-
 
 Google will be penalizing mobile rankings of websites that have intrusive pop-ups.(https://webmasters.googleblog.com/2016/08/helping-users-easily-access-content-on.html)
 
